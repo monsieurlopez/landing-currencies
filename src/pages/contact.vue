@@ -1,0 +1,113 @@
+<template>
+  <v-container max-width="600">
+    <div class="text-center mb-8">
+      <h1 class="text-h3 font-weight-bold mb-4">Contact Us</h1>
+      <p class="text-body-1 text-medium-emphasis">
+        Have questions about our API? We're here to help. Send us a message and
+        we'll get back to you soon.
+      </p>
+    </div>
+
+    <v-card variant="outlined" class="pa-6">
+      <v-form ref="form" v-model="valid" @submit.prevent="submitForm">
+        <v-text-field
+          v-model="form.name"
+          :rules="nameRules"
+          label="Name"
+          required
+          variant="outlined"
+          class="mb-4"
+          validate-on="input"
+        ></v-text-field>
+
+        <v-text-field
+          v-model="form.email"
+          :rules="emailRules"
+          label="Email"
+          type="email"
+          required
+          variant="outlined"
+          class="mb-4"
+          validate-on="input"
+        ></v-text-field>
+
+        <v-textarea
+          v-model="form.message"
+          :rules="messageRules"
+          label="Message"
+          variant="outlined"
+          rows="6"
+          class="mb-4"
+          validate-on="input"
+        ></v-textarea>
+
+        <v-btn
+          type="submit"
+          color="primary"
+          size="large"
+          :loading="loading"
+          :disabled="!valid"
+          block
+        >
+          Send Message
+        </v-btn>
+      </v-form>
+    </v-card>
+
+    <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="5000">
+      {{ snackbarText }}
+    </v-snackbar>
+  </v-container>
+</template>
+
+<script setup>
+import { ref } from "vue";
+
+const form = ref({
+  name: "",
+  email: "",
+  message: "",
+});
+
+const valid = ref(false);
+const loading = ref(false);
+const snackbar = ref(false);
+const snackbarText = ref("");
+const snackbarColor = ref("");
+
+const nameRules = [
+  (v) => !!v || "Name is required",
+  (v) => (v && v.length >= 2) || "Name must be at least 2 characters",
+];
+
+const emailRules = [
+  (v) => !!v || "Email is required",
+  (v) => /.+@.+\..+/.test(v) || "Email must be valid",
+];
+
+const messageRules = [
+  (v) => !v || v.length >= 10 || "Message must be at least 10 characters",
+];
+
+const submitForm = async () => {
+  loading.value = true;
+
+  // Simulate API call
+  try {
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+    snackbarText.value = "Message sent successfully!";
+    snackbarColor.value = "success";
+    snackbar.value = true;
+    console.log(form.value.name);
+    console.log(form.value.email);
+    console.log(form.value.message);
+    form.value = { name: "", email: "", message: "" };
+  } catch (error) {
+    snackbarText.value = "Failed to send message. Please try again.";
+    snackbarColor.value = "error";
+    snackbar.value = true;
+  } finally {
+    loading.value = false;
+  }
+};
+</script>
