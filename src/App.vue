@@ -9,7 +9,12 @@
     >
       <v-toolbar color="primary" dark>
         <v-toolbar-title>
-          <v-icon class="me-2">mdi-api</v-icon>
+          <v-img
+            src="./assets/logo_eurorates.svg"
+            width="150px"
+            alt="Logo Euro Rates API"
+            aria-label="Logo Euro Rates API"
+          ></v-img>
         </v-toolbar-title>
       </v-toolbar>
       <v-list>

@@ -1,38 +1,44 @@
 <template>
   <v-container class="fill-height" max-width="900">
     <div class="text-center">
-      <v-img
-        class="mb-4 mx-auto"
-        height="120"
-        width="120"
-        src="https://cdn.vuetifyjs.com/docs/images/logos/vuetify-logo-dark.png"
-        alt="API Logo"
-      />
-
-      <h1 class="text-h3 font-weight-bold mb-8">Welcome to Our API</h1>
+      <h1 class="text-h3 font-weight-bold mb-8">Welcome to Euro Rates API</h1>
 
       <!-- Key Highlights Section -->
-      <v-card variant="outlined" class="pa-8 mb-12 highlights-card" elevation="1">
+      <v-card
+        variant="outlined"
+        class="pa-8 mb-12 highlights-card"
+        elevation="1"
+      >
         <v-row justify="center">
           <v-col cols="12" sm="6" md="3" class="text-center">
             <v-icon size="56" class="mb-3 primary--text">mdi-bank</v-icon>
             <div class="text-h6 font-weight-bold mb-2">Official BCE Data</div>
-            <p class="text-body-2 text-medium-emphasis">Real-time exchange rates from the European Central Bank</p>
+            <p class="text-body-2 text-medium-emphasis">
+              Real-time exchange rates from the European Central Bank
+            </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
-            <v-icon size="56" class="mb-3 secondary--text">mdi-currency-eur</v-icon>
+            <v-icon size="56" class="mb-3 secondary--text"
+              >mdi-currency-eur</v-icon
+            >
             <div class="text-h6 font-weight-bold mb-2">30+ Currencies</div>
-            <p class="text-body-2 text-medium-emphasis">Comprehensive coverage of official world currencies</p>
+            <p class="text-body-2 text-medium-emphasis">
+              Comprehensive coverage of official world currencies
+            </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
             <v-icon size="56" class="mb-3 success--text">mdi-cash</v-icon>
             <div class="text-h6 font-weight-bold mb-2">Free API</div>
-            <p class="text-body-2 text-medium-emphasis">No costs, unlimited access to exchange rate data</p>
+            <p class="text-body-2 text-medium-emphasis">
+              No costs, unlimited access to exchange rate data
+            </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
             <v-icon size="56" class="mb-3 info--text">mdi-chart-line</v-icon>
             <div class="text-h6 font-weight-bold mb-2">Historical Data</div>
-            <p class="text-body-2 text-medium-emphasis">Access to historical exchange rates for analysis</p>
+            <p class="text-body-2 text-medium-emphasis">
+              Access to historical exchange rates for analysis
+            </p>
           </v-col>
         </v-row>
       </v-card>
@@ -42,8 +48,8 @@
       <div class="text-center mb-12">
         <p class="text-body-1 text-medium-emphasis mb-4">
           Discover our powerful API endpoints designed to streamline your
-          development process. Access comprehensive documentation and get in touch
-          for support.
+          development process. Access comprehensive documentation and get in
+          touch for support.
         </p>
       </div>
 
@@ -113,6 +119,10 @@ const router = useRouter();
 /* Highlights card styling */
 .highlights-card {
   border-radius: 16px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.05) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
 }
 </style>
