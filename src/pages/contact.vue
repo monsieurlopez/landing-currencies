@@ -3,26 +3,27 @@
     <div class="text-center mb-8">
       <h1 class="text-h3 font-weight-bold mb-4">Contact Us</h1>
       <p class="text-body-1 text-medium-emphasis">
-        Have questions about our API? We're here to help. Send us a message and
-        we'll get back to you soon.
+        Have questions about our API? We're here to help.
       </p>
     </div>
 
     <v-card variant="outlined" class="pa-6">
-      <v-form ref="formRef" @submit.prevent="submitForm">
+      <!-- DEBE SER UN FORM HTML REAL PARA EMAILJS -->
+      <form ref="formRef" @submit.prevent="submitForm">
         <v-text-field
           v-model="form.name"
+          name="from_name"
           :rules="nameRules"
-          clearable=""
+          clearable
           label="Name"
           required
           variant="outlined"
           class="mb-4"
-          validate-on="input"
         />
 
         <v-text-field
           v-model="form.email"
+          name="user_email"
           :rules="emailRules"
           clearable
           label="Email"
@@ -30,18 +31,17 @@
           required
           variant="outlined"
           class="mb-4"
-          validate-on="input"
         />
 
         <v-textarea
           v-model="form.message"
+          name="message"
           :rules="messageRules"
-          clearable=""
+          clearable
           label="Message"
           variant="outlined"
           rows="6"
           class="mb-4"
-          validate-on="input"
         />
 
         <v-btn
@@ -53,7 +53,7 @@
         >
           Send Message
         </v-btn>
-      </v-form>
+      </form>
     </v-card>
 
     <v-snackbar v-model="snackbar" :color="snackbarColor" timeout="5000">
@@ -64,12 +64,17 @@
 
 <script setup>
 import { ref } from "vue";
+import emailjs from "@emailjs/browser";
+
+const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 const formRef = ref(null);
 
 const form = ref({
-  name: "",
-  email: "",
+  from_name: "",
+  user_email: "",
   message: "",
 });
 
@@ -80,7 +85,7 @@ const snackbarColor = ref("");
 
 const nameRules = [
   (v) => !!v || "Name is required",
-  (v) => (v && v.length >= 2) || "Name must be at least 2 characters",
+  (v) => v.length >= 2 || "Name must be at least 2 characters",
 ];
 
 const emailRules = [
@@ -94,30 +99,25 @@ const messageRules = [
 ];
 
 const submitForm = async () => {
-  const { valid } = await formRef.value.validate();
-
-  if (!valid) return;
-
   loading.value = true;
 
   try {
-    // Simulación de API
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.value, {
+      publicKey: PUBLIC_KEY,
+    });
 
     snackbarText.value = "Message sent successfully!";
     snackbarColor.value = "success";
     snackbar.value = true;
 
-    console.log("Name:", form.value.name);
-    console.log("Email:", form.value.email);
-    console.log("Message:", form.value.message);
-
-    form.value = { name: "", email: "", message: "" };
-    formRef.value.resetValidation();
+    // Reset
+    form.value = { from_name: "", user_email: "", message: "" };
   } catch (error) {
-    snackbarText.value = "Failed to send message. Please try again.";
+    snackbarText.value = "Failed to send message.";
     snackbarColor.value = "error";
     snackbar.value = true;
+
+    console.error("EmailJS error:", error);
   } finally {
     loading.value = false;
   }
