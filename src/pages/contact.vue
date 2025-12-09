@@ -70,6 +70,10 @@ const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
 const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
 const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
+console.log("SERVICE_ID:", SERVICE_ID);
+console.log("TEMPLATE_ID:", TEMPLATE_ID);
+console.log("PUBLIC_KEY:", PUBLIC_KEY);
+
 const formRef = ref(null);
 
 const form = ref({
@@ -102,9 +106,9 @@ const submitForm = async () => {
   loading.value = true;
 
   try {
-    await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.value, {
-      publicKey: PUBLIC_KEY,
-    });
+    emailjs.init(PUBLIC_KEY);
+
+    await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, formRef.value);
 
     snackbarText.value = "Message sent successfully!";
     snackbarColor.value = "success";
