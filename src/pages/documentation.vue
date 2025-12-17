@@ -7,12 +7,14 @@ import { onMounted, computed } from "vue";
 import { useTheme } from "vuetify";
 
 const theme = useTheme();
-const swaggerTheme = computed(() => theme.global.current.value.dark ? "dark" : "light");
+const swaggerTheme = computed(() =>
+  theme.global.current.value.dark ? "dark" : "light",
+);
 
 onMounted(() => {
   window.SwaggerUIBundle({
     dom_id: "#swagger-ui",
-    url: "http://127.0.0.1:8000/docs?api-docs.json",
+    url: "http://api.euroratesapi.dev/docs?api-docs.json",
     theme: swaggerTheme.value,
   });
 });
@@ -129,7 +131,13 @@ onMounted(() => {
 }
 
 /* Specific for accordion arrows */
-.v-theme--dark #swagger-ui .swagger-ui .opblock .opblock-summary .opblock-summary-control svg {
+.v-theme--dark
+  #swagger-ui
+  .swagger-ui
+  .opblock
+  .opblock-summary
+  .opblock-summary-control
+  svg {
   fill: #f0f0f0 !important;
 }
 </style>
