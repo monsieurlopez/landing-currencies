@@ -27,18 +27,18 @@
             </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
-            <v-icon size="56" class="mb-3 success--text">mdi-cash</v-icon>
-            <div class="text-h6 font-weight-bold mb-2">Free API</div>
-            <p class="text-body-2 text-medium-emphasis">
-              No costs, unlimited access to exchange rate data
-            </p>
+          <v-icon size="56" class="mb-3 secondary--text">mdi-gift-outline</v-icon>
+          <div class="text-h6 font-weight-bold mb-2">Free API</div>
+          <p class="text-body-2 text-medium-emphasis">
+          No costs, unlimited access to exchange rate data
+          </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
-            <v-icon size="56" class="mb-3 info--text">mdi-chart-line</v-icon>
-            <div class="text-h6 font-weight-bold mb-2">Historical Data</div>
-            <p class="text-body-2 text-medium-emphasis">
-              Access to historical exchange rates for analysis
-            </p>
+          <v-icon size="56" class="mb-3 warning--text">mdi-history</v-icon>
+          <div class="text-h6 font-weight-bold mb-2">Historical Data</div>
+          <p class="text-body-2 text-medium-emphasis">
+          Access to historical exchange rates for analysis
+          </p>
           </v-col>
         </v-row>
       </v-card>
