@@ -14,7 +14,7 @@ const swaggerTheme = computed(() =>
 onMounted(() => {
   window.SwaggerUIBundle({
     dom_id: "#swagger-ui",
-    url: "http://api.euroratesapi.dev/docs?api-docs.json",
+    url: "https://api.euroratesapi.dev/docs?api-docs.json",
     theme: swaggerTheme.value,
   });
 });
