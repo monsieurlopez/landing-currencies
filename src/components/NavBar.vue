@@ -1,9 +1,9 @@
 <template>
   <v-app-bar app flat :style="appBarStyle" class="px-4">
     <v-app-bar-nav-icon
+      v-show="!drawer"
       @click="$emit('toggle-drawer')"
       variant="text"
-      :icon="drawer ? 'mdi-close' : 'mdi-menu'"
       :style="{
         position: drawer ? 'absolute' : 'relative',
         left: leftValue,
@@ -36,7 +36,7 @@ const appBarStyle = computed(() => ({
   color: "var(--v-theme-on-surface)",
 }));
 const leftValue = computed(() =>
-  drawer ? (display.xs.value ? "0px" : "280px") : "0px",
+  drawer ? (display.xs.value ? "250px" : "280px") : "0px",
 );
 
 const toggleTheme = () => {

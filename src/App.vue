@@ -7,6 +7,13 @@
       width="280"
       :style="{ top: '0', height: '100vh', zIndex: 9999 }"
     >
+      <v-toolbar color="primary" dark>
+        <v-toolbar-title>Menu</v-toolbar-title>
+        <v-spacer></v-spacer>
+        <v-btn icon @click="drawer = false">
+          <v-icon>mdi-close</v-icon>
+        </v-btn>
+      </v-toolbar>
       <v-list>
         <v-list-item
           prepend-icon="mdi-home"
