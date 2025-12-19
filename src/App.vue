@@ -5,11 +5,8 @@
       v-model="drawer"
       temporary
       width="280"
-      style="top: 0; height: 100vh"
+      :style="{ top: '0', height: '100vh', zIndex: 9999 }"
     >
-      <v-toolbar color="primary" dark>
-        <v-toolbar-title> </v-toolbar-title>
-      </v-toolbar>
       <v-list>
         <v-list-item
           prepend-icon="mdi-home"

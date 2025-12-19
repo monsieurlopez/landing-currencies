@@ -3,9 +3,10 @@
     <v-app-bar-nav-icon
       @click="$emit('toggle-drawer')"
       variant="text"
+      :icon="drawer ? 'mdi-close' : 'mdi-menu'"
       :style="{
         position: drawer ? 'absolute' : 'relative',
-        left: drawer ? '280px' : '0px',
+        left: leftValue,
       }"
     ></v-app-bar-nav-icon>
 
@@ -19,24 +20,28 @@
 
 <script setup>
 import { ref, computed } from "vue";
-import { useTheme } from "vuetify";
+import { useTheme, useDisplay } from "vuetify";
+
+const { drawer } = defineProps({
+  drawer: Boolean,
+});
+
+defineEmits(["toggle-drawer"]);
 
 const theme = useTheme();
+const display = useDisplay();
 const isDark = computed(() => theme.global.current.value.dark);
 const appBarStyle = computed(() => ({
   backgroundColor: "rgba(var(--v-theme-surface), 1)",
   color: "var(--v-theme-on-surface)",
 }));
+const leftValue = computed(() =>
+  drawer ? (display.xs.value ? "0px" : "280px") : "0px",
+);
 
 const toggleTheme = () => {
   const newTheme = theme.global.current.value.dark ? "light" : "dark";
   theme.global.name.value = newTheme;
   localStorage.setItem("theme", newTheme);
 };
-
-defineProps({
-  drawer: Boolean,
-});
-
-defineEmits(["toggle-drawer"]);
 </script>
