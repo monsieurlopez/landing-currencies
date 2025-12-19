@@ -8,14 +8,7 @@
       style="top: 0; height: 100vh"
     >
       <v-toolbar color="primary" dark>
-        <v-toolbar-title>
-          <v-img
-            src="./assets/logo_eurorates.svg"
-            width="150px"
-            alt="Logo Euro Rates API"
-            aria-label="Logo Euro Rates API"
-          ></v-img>
-        </v-toolbar-title>
+        <v-toolbar-title> </v-toolbar-title>
       </v-toolbar>
       <v-list>
         <v-list-item
