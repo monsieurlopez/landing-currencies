@@ -1,7 +1,15 @@
 <template>
   <v-container class="fill-height" max-width="900">
     <div class="text-center">
-      <h1 class="text-h3 font-weight-bold mb-8">Welcome to Euro Rates API</h1>
+      <h1 class="text-h3 font-weight-bold mb-10 d-flex w-lg-75 w-50 mx-auto">
+        <v-img
+          src="../assets/logo_eurorates.svg"
+          width="100px"
+          alt="Logo Euro Rates API"
+          aria-label="Logo Euro Rates API"
+          :style="{ filter: isDark ? 'invert(1)' : 'none' }"
+        ></v-img>
+      </h1>
 
       <!-- Key Highlights Section -->
       <v-card
@@ -27,18 +35,20 @@
             </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
-          <v-icon size="56" class="mb-3 secondary--text">mdi-gift-outline</v-icon>
-          <div class="text-h6 font-weight-bold mb-2">Free API</div>
-          <p class="text-body-2 text-medium-emphasis">
-          No costs, unlimited access to exchange rate data
-          </p>
+            <v-icon size="56" class="mb-3 secondary--text"
+              >mdi-gift-outline</v-icon
+            >
+            <div class="text-h6 font-weight-bold mb-2">Free API</div>
+            <p class="text-body-2 text-medium-emphasis">
+              No costs, unlimited access to exchange rate data
+            </p>
           </v-col>
           <v-col cols="12" sm="6" md="3" class="text-center">
-          <v-icon size="56" class="mb-3 warning--text">mdi-history</v-icon>
-          <div class="text-h6 font-weight-bold mb-2">Historical Data</div>
-          <p class="text-body-2 text-medium-emphasis">
-          Access to historical exchange rates for analysis
-          </p>
+            <v-icon size="56" class="mb-3 warning--text">mdi-history</v-icon>
+            <div class="text-h6 font-weight-bold mb-2">Historical Data</div>
+            <p class="text-body-2 text-medium-emphasis">
+              Access to historical exchange rates for analysis
+            </p>
           </v-col>
         </v-row>
       </v-card>
@@ -100,9 +110,13 @@
 </template>
 
 <script setup>
+import { computed } from "vue";
 import { useRouter } from "vue-router";
+import { useTheme } from "vuetify";
 
 const router = useRouter();
+const theme = useTheme();
+const isDark = computed(() => theme.global.current.value.dark);
 </script>
 
 <style scoped>
