@@ -1,0 +1,23 @@
+# Allow all legitimate search engines
+User-agent: *
+Allow: /
+
+# Disallow admin and private paths (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Block bad bots
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Crawl delay for bots
+Crawl-delay: 1
+
+# Sitemap
+Sitemap: https://euroratesapi.dev/sitemap.xml
