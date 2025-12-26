@@ -1,79 +1,108 @@
-# Vuetify (Default)
+# Euro Rates API
 
-This is the official scaffolding tool for Vuetify, designed to give you a head start in building your new Vuetify application. It sets up a base template with all the necessary configurations and standard directory structure, enabling you to begin development without the hassle of setting up the project from scratch.
+A modern, free REST API providing real-time EUR exchange rates sourced directly from the European Central Bank (BCE). Built with Vue 3 and Vuetify 3, this project combines a beautiful documentation portal with a robust backend API for developers.
 
-## ❗️ Important Links
+## 🎯 Features
 
-- 📄 [Docs](https://vuetifyjs.com/)
-- 🚨 [Issues](https://issues.vuetifyjs.com/)
-- 🏬 [Store](https://store.vuetifyjs.com/)
-- 🎮 [Playground](https://play.vuetifyjs.com/)
-- 💬 [Discord](https://community.vuetifyjs.com)
+- **Official ECB Data**: Real-time exchange rates directly from the European Central Bank
+- **30+ Currencies**: Comprehensive coverage of major world currencies
+- **Free Forever**: No API keys, no rate limits, completely free to use
+- **Historical Data**: Access to historical exchange rates for analysis and backtesting
+- **RESTful API**: Simple, intuitive endpoints for easy integration
+- **Interactive Documentation**: Swagger UI for testing endpoints directly
+- **Modern UI**: Built with Vue 3 and Vuetify 3 with responsive design
+- **Dark Mode Support**: Light and dark theme options
+- **SEO Optimized**: Full SEO configuration with metatags and sitemap
+- **Contact Form**: Direct communication channel for support and feedback
 
-## 💿 Install
+## 🚀 Quick Start
 
-Set up your project using your preferred package manager. Use the corresponding command to install the dependencies:
+### Prerequisites
+- Node.js 16+ 
+- Package manager (npm, yarn, pnpm, or bun)
 
-| Package Manager                                                | Command        |
-|---------------------------------------------------------------|----------------|
-| [yarn](https://yarnpkg.com/getting-started)                   | `yarn install` |
-| [npm](https://docs.npmjs.com/cli/v7/commands/npm-install)     | `npm install`  |
-| [pnpm](https://pnpm.io/installation)                          | `pnpm install` |
-| [bun](https://bun.sh/#getting-started)                        | `bun install`  |
-
-After completing the installation, your environment is ready for Vuetify development.
-
-## ✨ Features
-
-- 🖼️ **Optimized Front-End Stack**: Leverage the latest Vue 3 and Vuetify 3 for a modern, reactive UI development experience. [Vue 3](https://v3.vuejs.org/) | [Vuetify 3](https://vuetifyjs.com/en/)
-- 🗃️ **State Management**: Integrated with [Pinia](https://pinia.vuejs.org/), the intuitive, modular state management solution for Vue.
-- 🚦 **Routing and Layouts**: Utilizes Vue Router for SPA navigation and vite-plugin-vue-layouts for organizing Vue file layouts. [Vue Router](https://router.vuejs.org/) | [vite-plugin-vue-layouts](https://github.com/JohnCampionJr/vite-plugin-vue-layouts)
-- ⚡ **Next-Gen Tooling**: Powered by Vite, experience fast cold starts and instant HMR (Hot Module Replacement). [Vite](https://vitejs.dev/)
-- 🧩 **Automated Component Importing**: Streamline your workflow with unplugin-vue-components, automatically importing components as you use them. [unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
-
-These features are curated to provide a seamless development experience from setup to deployment, ensuring that your Vuetify application is both powerful and maintainable.
-
-## 💡 Usage
-
-This section covers how to start the development server and build your project for production.
-
-### Starting the Development Server
-
-To start the development server with hot-reload, run the following command. The server will be accessible at [http://localhost:3000](http://localhost:3000):
+### Installation
 
 ```bash
-yarn dev
+# Install dependencies
+pnpm install
+# or
+npm install
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+### Development
 
-> Add NODE_OPTIONS='--no-warnings' to suppress the JSON import warnings that happen as part of the Vuetify import mapping. If you are on Node [v21.3.0](https://nodejs.org/en/blog/release/v21.3.0) or higher, you can change this to NODE_OPTIONS='--disable-warning=5401'. If you don't mind the warning, you can remove this from your package.json dev script.
-
-### Building for Production
-
-To build your project for production, use:
+Start the development server with hot-reload:
 
 ```bash
-yarn build
+pnpm dev
+# or
+npm run dev
 ```
 
-(Repeat for npm, pnpm, and bun with respective commands.)
+The application will be available at `http://localhost:5173`
 
-Once the build process is completed, your application will be ready for deployment in a production environment.
+### Production Build
 
-## 💪 Support Vuetify Development
+Build for production:
 
-This project is built with [Vuetify](https://vuetifyjs.com/en/), a UI Library with a comprehensive collection of Vue components. Vuetify is an MIT licensed Open Source project that has been made possible due to the generous contributions by our [sponsors and backers](https://vuetifyjs.com/introduction/sponsors-and-backers/). If you are interested in supporting this project, please consider:
+```bash
+pnpm build
+# or
+npm run build
+```
 
-- [Requesting Enterprise Support](https://support.vuetifyjs.com/)
-- [Sponsoring John on Github](https://github.com/users/johnleider/sponsorship)
-- [Sponsoring Kael on Github](https://github.com/users/kaelwd/sponsorship)
-- [Supporting the team on Open Collective](https://opencollective.com/vuetify)
-- [Becoming a sponsor on Patreon](https://www.patreon.com/vuetify)
-- [Becoming a subscriber on Tidelift](https://tidelift.com/subscription/npm/vuetify)
-- [Making a one-time donation with Paypal](https://paypal.me/vuetify)
+Preview the production build:
 
-## 📑 License
-[MIT](http://opensource.org/licenses/MIT)
+```bash
+pnpm preview
+# or
+npm run preview
+```
 
-Copyright (c) 2016-present Vuetify, LLC
+## 🛠️ Technology Stack
+
+### Frontend
+- **Vue 3** - Progressive JavaScript framework
+- **Vuetify 3** - Material Design component library
+- **Vue Router 4** - Client-side routing
+- **Vite** - Next-gen build tool with fast HMR
+- **@unhead/vue** - Head management for SEO
+- **@emailjs/browser** - Client-side email service
+
+### Styling
+- **Sass** - CSS preprocessor
+- **Material Design Icons** - Icon library via @mdi/font
+
+### Development
+- **ESLint** - Code linting
+- **unplugin-vue-components** - Auto component importing
+- **unplugin-vue-router** - File-based routing
+
+## 📖 API Documentation
+
+Full API documentation is available at `/documentation` with an interactive Swagger UI where you can test all endpoints.
+
+For detailed information about request/response formats, parameters, and examples, visit the documentation page.
+
+## 💬 Contact
+
+Have questions or feedback? Visit the `/contact` page to get in touch with the development team.
+
+### Connect
+
+- 🔗 LinkedIn: [Sergio López Ruiz](https://www.linkedin.com/in/lopez-ruiz-sergio/)
+- 🐙 GitHub: [monsieurlopez](https://github.com/monsieurlopez/landing-currencies)
+
+## 🔒 SEO & Accessibility
+
+- Optimized meta tags for search engines
+- XML sitemap for better indexing
+- robots.txt configuration
+- Accessible navigation with ARIA labels
+- Responsive design for all devices
+- Dark mode support
+
+## 📝 License
+
+MIT License - Feel free to use this project for your own purposes.
