@@ -1,6 +1,6 @@
 <template>
   <v-container max-width="700" class="contact-container">
-    <div class="text-center mb-12">
+    <div class="text-center mb-8">
       <h1 class="text-h3 font-weight-bold mb-4">Contact Us</h1>
       <p class="text-body-1 text-medium-emphasis">
         Have questions about our API? We're here to help.
@@ -19,7 +19,7 @@
               required
               variant="filled"
               prepend-inner-icon="mdi-account"
-              class="mb-6"
+              class="mb-4"
             />
           </v-col>
           <v-col cols="12" md="6">
@@ -32,7 +32,7 @@
               required
               variant="filled"
               prepend-inner-icon="mdi-email"
-              class="mb-6"
+              class="mb-4"
             />
           </v-col>
         </v-row>
@@ -46,7 +46,7 @@
           variant="filled"
           rows="5"
           prepend-inner-icon="mdi-message-text"
-          class="mb-8"
+          class="mb-4"
         />
 
         <div class="text-center">
