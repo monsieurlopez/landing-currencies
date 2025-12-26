@@ -12,14 +12,38 @@
 
     <v-spacer></v-spacer>
 
-    <v-btn icon @click="toggleTheme" variant="text">
-      <v-icon>{{ isDark ? "mdi-weather-sunny" : "mdi-weather-night" }}</v-icon>
-    </v-btn>
+    <v-btn-toggle variant="outlined" :density="displayDensity">
+      <v-btn
+        icon
+        href="https://www.linkedin.com/in/lopez-ruiz-sergio/"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="text"
+        aria-label="LinkedIn"
+      >
+        <v-icon>mdi-linkedin</v-icon>
+      </v-btn>
+      <v-btn
+        icon
+        href="https://github.com/monsieurlopez/landing-currencies"
+        target="_blank"
+        rel="noopener noreferrer"
+        variant="text"
+        aria-label="GitHub"
+      >
+        <v-icon>mdi-github</v-icon>
+      </v-btn>
+      <v-btn icon @click="toggleTheme" variant="text" aria-label="Toggle Theme">
+        <v-icon>{{
+          isDark ? "mdi-weather-sunny" : "mdi-weather-night"
+        }}</v-icon>
+      </v-btn>
+    </v-btn-toggle>
   </v-app-bar>
 </template>
 
 <script setup>
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import { useTheme, useDisplay } from "vuetify";
 
 const { drawer } = defineProps({
@@ -38,6 +62,9 @@ const appBarStyle = computed(() => ({
 const leftValue = computed(() =>
   drawer ? (display.xs.value ? "250px" : "280px") : "0px",
 );
+const displayDensity = computed(() => {
+  return display.xs.value ? "compact" : "default";
+});
 
 const toggleTheme = () => {
   const newTheme = theme.global.current.value.dark ? "light" : "dark";
