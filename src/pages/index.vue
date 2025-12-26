@@ -63,8 +63,8 @@
         </p>
       </div>
 
-      <v-row justify="center">
-        <v-col cols="12" md="4">
+      <v-row justify="center" class="mb-2">
+        <v-col cols="10" md="4">
           <v-card
             class="pa-6 modern-card"
             elevation="4"
@@ -85,7 +85,7 @@
           </v-card>
         </v-col>
 
-        <v-col cols="12" md="4">
+        <v-col cols="10" md="4">
           <v-card
             class="pa-6 modern-card"
             elevation="4"
