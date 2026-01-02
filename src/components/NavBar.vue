@@ -25,13 +25,13 @@
       </v-btn>
       <v-btn
         icon
-        href="https://github.com/monsieurlopez/landing-currencies"
+        href="buymeacoffee.com/serlopez"
         target="_blank"
         rel="noopener noreferrer"
         variant="text"
-        aria-label="GitHub"
+        aria-label="Buy me a coffee"
       >
-        <v-icon>mdi-github</v-icon>
+        <v-icon>mdi-coffee</v-icon>
       </v-btn>
       <v-btn icon @click="toggleTheme" variant="text" aria-label="Toggle Theme">
         <v-icon>{{
