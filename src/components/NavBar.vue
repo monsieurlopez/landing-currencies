@@ -25,7 +25,7 @@
       </v-btn>
       <v-btn
         icon
-        href="buymeacoffee.com/serlopez"
+        href="https://buymeacoffee.com/serlopez"
         target="_blank"
         rel="noopener noreferrer"
         variant="text"
