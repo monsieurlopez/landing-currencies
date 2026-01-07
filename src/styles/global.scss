@@ -1,0 +1,260 @@
+// Global styles for modern design system
+
+:root {
+  // Light theme colors
+  --primary-color: #3b82f6;
+  --secondary-color: #8b5cf6;
+  --success-color: #10b981;
+  --warning-color: #f59e0b;
+  --danger-color: #ef4444;
+  
+  // Typography
+  --font-family: 'Roboto', sans-serif;
+  --font-family-mono: 'Fira Code', 'Courier New', monospace;
+  
+  // Transitions
+  --transition-fast: 150ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 500ms ease;
+  --transition-slowest: 800ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// Smooth scrolling
+html {
+  scroll-behavior: smooth;
+}
+
+// Global animations
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(59, 130, 246, 0.4);
+  }
+}
+
+// Utility classes
+.animate-fade-in-up {
+  animation: fadeInUp var(--transition-slow);
+}
+
+.animate-fade-in-down {
+  animation: fadeInDown var(--transition-slow);
+}
+
+.animate-slide-in-right {
+  animation: slideInRight var(--transition-slow);
+}
+
+.animate-pulse {
+  animation: pulse 2s var(--transition-base) infinite;
+}
+
+.animate-glow {
+  animation: glow 2s var(--transition-base) infinite;
+}
+
+// Selection styling
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+::-webkit-selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+// Scrollbar styling
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(59, 130, 246, 0.4);
+  border-radius: 4px;
+  
+  &:hover {
+    background: rgba(59, 130, 246, 0.6);
+  }
+}
+
+// Dark theme scrollbar
+.v-theme--dark {
+  ::-webkit-scrollbar-thumb {
+    background: rgba(59, 130, 246, 0.3);
+    
+    &:hover {
+      background: rgba(59, 130, 246, 0.5);
+    }
+  }
+}
+
+// Focus styles
+*:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
+}
+
+// Button transitions
+button,
+.v-btn {
+  transition: all var(--transition-base);
+}
+
+// Link styling
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: all var(--transition-fast);
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Gradient text utility
+.gradient-text {
+  background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+// Glass morphism utility
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  
+  .v-theme--dark & {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+// Container max-width utility
+.max-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+// Responsive spacing
+@media (max-width: 960px) {
+  .hide-md {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .hide-sm {
+    display: none;
+  }
+}
+
+// Prevent layout shift
+html {
+  scroll-padding-top: 80px;
+}
+
+// Image optimization
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+// Form improvements
+input,
+textarea,
+select {
+  font-family: var(--font-family);
+  
+  &:focus {
+    outline: none;
+  }
+}
+
+// Code block styling
+code {
+  font-family: var(--font-family-mono);
+  font-size: 0.875em;
+  padding: 0.2em 0.4em;
+  background: var(--code-bg);
+  border-radius: 0.3em;
+}
+
+.v-theme--dark code {
+  --code-bg: rgba(255, 255, 255, 0.1);
+}
+
+.v-theme--light code {
+  --code-bg: rgba(0, 0, 0, 0.05);
+}
+
+pre {
+  font-family: var(--font-family-mono);
+  
+  code {
+    padding: 0;
+    background: none;
+  }
+}

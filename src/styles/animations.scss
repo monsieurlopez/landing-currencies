@@ -1,0 +1,184 @@
+// Advanced animations and transitions
+
+// Stagger animation helper
+@mixin stagger-children($count: 4, $delay: 100ms) {
+  @for $i from 1 through $count {
+    &:nth-child(#{$i}) {
+      transition-delay: $delay * ($i - 1);
+    }
+  }
+}
+
+// Smooth appear animation
+@mixin smooth-appear($duration: 0.6s) {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: smoothAppear $duration ease-out forwards;
+}
+
+@keyframes smoothAppear {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Bouncy appearance
+@mixin bouncy-appear($duration: 0.8s) {
+  animation: bouncyAppear $duration cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  opacity: 0;
+}
+
+@keyframes bouncyAppear {
+  to {
+    opacity: 1;
+  }
+}
+
+// Float animation
+@mixin float-animation($duration: 3s) {
+  animation: float $duration ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+// Gradient shift animation
+@mixin gradient-shift($duration: 6s) {
+  background-size: 400% 400%;
+  animation: gradientShift $duration ease infinite;
+}
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+// Blur in animation
+@mixin blur-in($duration: 0.6s) {
+  animation: blurIn $duration ease-out forwards;
+  opacity: 0;
+  filter: blur(10px);
+}
+
+@keyframes blurIn {
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+// Slide animations
+@mixin slide-in-left($duration: 0.6s) {
+  animation: slideInLeft $duration ease-out forwards;
+  opacity: 0;
+  transform: translateX(-100px);
+}
+
+@keyframes slideInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin slide-in-right($duration: 0.6s) {
+  animation: slideInRight $duration ease-out forwards;
+  opacity: 0;
+  transform: translateX(100px);
+}
+
+@keyframes slideInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@mixin slide-in-up($duration: 0.6s) {
+  animation: slideInUp $duration ease-out forwards;
+  opacity: 0;
+  transform: translateY(100px);
+}
+
+@keyframes slideInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Text reveal animation
+@mixin text-reveal($duration: 0.8s) {
+  animation: textReveal $duration ease-out forwards;
+  background: linear-gradient(90deg, #3b82f6 0%, #8b5cf6 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+@keyframes textReveal {
+  from {
+    background-position: 100% center;
+  }
+  to {
+    background-position: 0% center;
+  }
+}
+
+// Neon glow animation
+@mixin neon-glow($color: #3b82f6) {
+  animation: neonGlow 2s ease-in-out infinite;
+  text-shadow: 0 0 10px #{$color};
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.5);
+  }
+  50% {
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.8);
+  }
+}
+
+// Rotate animation
+@mixin rotate-animation($duration: 2s) {
+  animation: rotate $duration linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+// Expand animation
+@mixin expand($duration: 0.4s) {
+  animation: expand $duration ease-out forwards;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+@keyframes expand {
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

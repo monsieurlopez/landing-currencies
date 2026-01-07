@@ -11,8 +11,13 @@ export {}
 /* prettier-ignore */
 declare module 'vue' {
   export interface GlobalComponents {
+    EndpointCard: typeof import('./src/components/home/EndpointCard.vue')['default']
+    FAQSection: typeof import('./src/components/home/FAQSection.vue')['default']
+    FeatureCard: typeof import('./src/components/home/FeatureCard.vue')['default']
     NavBar: typeof import('./src/components/NavBar.vue')['default']
+    ParallaxSection: typeof import('./src/components/ParallaxSection.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    ScrollReveal: typeof import('./src/components/ScrollReveal.vue')['default']
   }
 }
