@@ -232,7 +232,7 @@ const endpoints = [
 // Stats data
 const stats = [
   { number: "30+", label: "Currencies" },
-  { number: "0€", label: "Price" },
+  { number: "4", label: "Endpoints" },
   { number: "99.9%", label: "Uptime" },
   { number: "15K+", label: "Requests/Month" },
 ];

@@ -1,10 +1,5 @@
 <template>
-  <v-app-bar
-    app
-    flat
-    class="navbar-bar px-6"
-    :style="appBarStyle"
-  >
+  <v-app-bar app flat class="navbar-bar px-6" :style="appBarStyle">
     <!-- Menu Icon -->
     <v-app-bar-nav-icon
       v-show="!drawer"
@@ -58,7 +53,9 @@
         aria-label="Toggle Theme"
         class="navbar-btn"
       >
-        <v-icon>{{ isDark ? "mdi-weather-sunny" : "mdi-weather-night" }}</v-icon>
+        <v-icon>{{
+          isDark ? "mdi-weather-sunny" : "mdi-weather-night"
+        }}</v-icon>
       </v-btn>
     </div>
   </v-app-bar>
@@ -81,13 +78,15 @@ const isDark = computed(() => theme.global.current.value.dark);
 const appBarStyle = computed(() => {
   if (isDark.value) {
     return {
-      background: "linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)",
+      background:
+        "linear-gradient(90deg, rgba(15, 23, 42, 0.95) 0%, rgba(30, 41, 59, 0.95) 100%)",
       borderBottom: "1px solid rgba(59, 130, 246, 0.1)",
       backdropFilter: "blur(10px)",
     };
   }
   return {
-    background: "linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%)",
+    background:
+      "linear-gradient(90deg, rgba(255, 255, 255, 0.98) 0%, rgba(248, 250, 252, 0.98) 100%)",
     borderBottom: "1px solid rgba(59, 130, 246, 0.1)",
     backdropFilter: "blur(10px)",
   };
@@ -136,7 +135,7 @@ const toggleTheme = () => {
 .navbar-actions {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 8px;
 }
 
 .navbar-btn {
