@@ -2,8 +2,8 @@
   <div class="modern-home">
     <!-- Hero Section -->
     <section class="hero-section">
-      <v-container class="fill-height" max-width="1200">
-        <v-row align="center" class="min-h-screen">
+      <v-container max-width="1200">
+        <v-row align="center">
           <v-col cols="12" md="6" class="text-start">
             <div
               ref="heroTitleRef"
@@ -58,7 +58,7 @@ console.log(rates.rates); ✓</code></pre>
     </section>
 
     <!-- Features Section -->
-    <section class="features-section py-20">
+    <section class="features-section py-12">
       <v-container max-width="1200">
         <div class="section-header">
           <h2 class="section-title">Why Choose Euro Rates API?</h2>
@@ -87,7 +87,7 @@ console.log(rates.rates); ✓</code></pre>
     </section>
 
     <!-- API Endpoints Preview -->
-    <section class="endpoints-section py-20">
+    <section class="endpoints-section py-12">
       <v-container max-width="1200">
         <div class="section-header">
           <h2 class="section-title">Powerful Endpoints</h2>
@@ -109,7 +109,7 @@ console.log(rates.rates); ✓</code></pre>
     </section>
 
     <!-- Stats Section -->
-    <section class="stats-section py-20">
+    <section class="stats-section py-12">
       <v-container max-width="1200">
         <v-row class="text-center">
           <v-col v-for="(stat, i) in stats" :key="i" cols="12" sm="6" md="3">
@@ -131,7 +131,7 @@ console.log(rates.rates); ✓</code></pre>
     <FAQSection />
 
     <!-- CTA Section -->
-    <section class="cta-section py-16">
+    <section class="cta-section py-10">
       <v-container max-width="1000">
         <div ref="ctaRef" class="cta-card" :class="{ visible: ctaVisible }">
           <h2 class="text-h4 mb-4 font-weight-bold">Ready to get started?</h2>
@@ -338,11 +338,12 @@ onMounted(() => {
 
 /* ========== Hero Section ========== */
 .hero-section {
-  min-height: 100vh;
+  min-height: auto;
   display: flex;
   align-items: center;
   position: relative;
   overflow: hidden;
+  padding: 90px 0;
 }
 
 .hero-section::before {
@@ -632,8 +633,7 @@ onMounted(() => {
 /* ========== Responsive ========== */
 @media (max-width: 768px) {
   .hero-section {
-    min-height: auto;
-    padding: 40px 0;
+    padding: 45px 0;
   }
 
   .hero-title {
@@ -688,7 +688,7 @@ onMounted(() => {
 
 @media (max-width: 480px) {
   .hero-section {
-    padding: 30px 0;
+    padding: 35px 0;
   }
 
   .hero-title {
@@ -721,7 +721,7 @@ onMounted(() => {
 
 /* ========== Utilities ========== */
 .min-h-screen {
-  min-height: 100vh;
+  min-height: auto;
 }
 
 .gap-3 {
@@ -733,13 +733,67 @@ onMounted(() => {
 }
 
 .py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .py-16 {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.py-12 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.py-10 {
+  padding-top: 1.75rem;
+  padding-bottom: 1.75rem;
+}
+
+@media (max-width: 768px) {
+  .py-20 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  .py-16 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .py-12 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .py-10 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .py-20 {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .py-16 {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .py-12 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .py-10 {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
 }
 
 .mb-4 {
