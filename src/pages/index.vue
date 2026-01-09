@@ -271,22 +271,21 @@ onMounted(() => {
       }
     });
 
-    // Endpoints animation
-    endpointRefs.value.forEach((ref, i) => {
-      if (ref?.$el) {
-        const observer = new IntersectionObserver(
-          ([entry]) => {
-            if (entry.isIntersecting) {
-              setTimeout(() => {
-                endpointsVisible.value[i] = true;
-              }, i * 100);
-              observer.unobserve(entry.target);
-            }
-          },
-          { threshold: 0.1 },
-        );
-        observer.observe(ref.$el);
-      }
+    // Endpoints animation - use querySelectorAll instead of refs
+    const endpointElements = document.querySelectorAll('.endpoint-card-wrapper');
+    endpointElements.forEach((element, i) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => {
+              endpointsVisible.value[i] = true;
+            }, i * 100);
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.1 },
+      );
+      observer.observe(element);
     });
 
     // Stats animation
