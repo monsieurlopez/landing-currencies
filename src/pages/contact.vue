@@ -3,7 +3,7 @@
     <v-container max-width="700" class="contact-container">
       <!-- Header Section -->
       <div ref="headerRef" class="header-content" :class="{ visible: headerVisible }">
-        <div class="text-center mb-12">
+        <div class="text-center mb-6">
           <h1 class="contact-title mb-4">Get in Touch</h1>
           <p class="contact-subtitle">
             Have questions about our API? We'd love to hear from you.
@@ -56,6 +56,13 @@
               class="input-field mb-6"
               density="comfortable"
             />
+
+            <!-- Privacy Notice -->
+            <div class="privacy-notice mb-6">
+              <p class="privacy-text">
+                By clicking "Send Message", you agree that your name, email, and message will be used solely to respond to your inquiry. We do not store your personal data for any other purpose. Your information is protected and handled in accordance with data protection regulations.
+              </p>
+            </div>
 
             <div class="text-center">
               <v-btn
@@ -173,6 +180,29 @@
 
 :deep(.v-theme--light) .input-field {
   --field-border: rgba(59, 130, 246, 0.2);
+}
+
+/* ========== Privacy Notice ========== */
+.privacy-notice {
+  padding: 12px 16px;
+  border-left: 3px solid #3b82f6;
+  border-radius: 8px;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+:deep(.v-theme--dark) .privacy-notice {
+  background: rgba(59, 130, 246, 0.1);
+}
+
+:deep(.v-theme--light) .privacy-notice {
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.privacy-text {
+  font-size: 0.875rem;
+  opacity: 0.75;
+  margin: 0;
+  line-height: 1.5;
 }
 
 /* ========== Button ========== */

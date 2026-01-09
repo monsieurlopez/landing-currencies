@@ -138,7 +138,7 @@ console.log(rates.rates); ✓</code></pre>
           <p class="text-h6 mb-8 text-medium-emphasis">
             Integrate our API in minutes. No credit card required.
           </p>
-          <v-btn size="x-large" to="/documentation" class="btn-primary">
+          <v-btn :size="mdAndUp ? 'x-large' : 'default'" to="/documentation" class="btn-primary">
             View Documentation
             <v-icon end>mdi-arrow-right</v-icon>
           </v-btn>
@@ -150,13 +150,14 @@ console.log(rates.rates); ✓</code></pre>
 
 <script setup>
 import { ref, computed, onMounted, nextTick } from "vue";
-import { useTheme } from "vuetify";
+import { useTheme, useDisplay } from "vuetify";
 import { useScrollAnimation } from "@/composables/useScrollAnimation";
 import FeatureCard from "@/components/home/FeatureCard.vue";
 import EndpointCard from "@/components/home/EndpointCard.vue";
 import FAQSection from "@/components/home/FAQSection.vue";
 
 const theme = useTheme();
+const { mdAndUp } = useDisplay();
 const isDark = computed(() => theme.global.current.value.dark);
 
 // References
