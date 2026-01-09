@@ -42,7 +42,7 @@
         aria-label="Buy me a coffee"
         class="navbar-btn"
       >
-        <v-icon>mdi-coffee</v-icon>
+        <v-icon>mdi mdi-heart</v-icon>
       </v-btn>
 
       <!-- Theme Toggle -->
